@@ -47,7 +47,6 @@ Now let's do some simple math, as I want my backpack to be 6x3 we need to calcul
 
 <p>
 I will use the 96x96 slot size, the same as the one I use in my current project.
-</p>
 
 It will look like this:
 <ul>
@@ -55,18 +54,26 @@ It will look like this:
 <li>Height: 3x96 = 288</li>
 </ul>
 
-<p>
 I changed the color of the image component too, after these changes we should have something similar to this:
 </p>
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/8a3706ec-84c8-42d4-88a3-17902d003de9)
 
+<p>
+Let's create another object called "Grid", this object will be a child of the "Backpack [6x3]" object and every backpack object needs a grid object.
+
+In the grid object, I will also add an image element and I will also use Shift + Alt to change its Stretch to maximized.
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/c9ddce6f-d261-45a0-8d6b-19889003f063)
+
+<p>
+</p>
+
 <h3>Creating Inventory</h3>
 <p>
 Now we get to the best part, adding scripts and building our inventory.
-</p>
 
-<p>
 We will need to add 2 scripts to our Inventory object.
 They are:
 
@@ -79,3 +86,37 @@ Later on I'll talk more about each one, for now let's try to make it work first.
 </p>
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/03d01a58-4eac-4944-a2b1-f474ae568345)
+
+<p>
+Now let's add the "InventoryGrid" script to our "Backpack [6x3]" object.
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/c10e2f9b-c597-47db-b446-b4b0ad60aff4)
+
+<p>
+Now that we have the necessary scripts, let's add the variables for each one.
+
+We already have the necessary scripts, let's add our "Grid" object to the InventoryGrid variable "RectTransform", like this:
+</p>
+
+![Sem título4](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/4071416c-31ea-4042-8008-6596c6b36716)
+
+<p>
+And let's set the grid size to the size of our backpack, in my case 6x3.
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/84649d65-76e2-45e2-b469-5e0a8fa59fed)
+
+<p>
+Alright, now we just need to place a sprite of the size we want our slot to be in our "Grid" object in the "Image" component.
+
+I'll leave the image I use in my project so you can get an idea of ​​how it works.
+
+Something similar to this:
+</p>
+
+![Inventory-Slot-Grid](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/495428a5-203c-46b2-9c67-16392b47859d)
+
+<p>
+Our grid object will look like this:
+</p>
