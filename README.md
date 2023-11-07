@@ -53,3 +53,9 @@ It will look like this:
 <li>Width: 6x96 = 576</li>
 <li>Height: 3x96 = 288</li>
 </ul>
+
+<p>
+I changed the color of the image component too, after these changes we should have something similar to this:
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/8a3706ec-84c8-42d4-88a3-17902d003de9)
