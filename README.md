@@ -108,15 +108,13 @@ And let's set the grid size to the size of our backpack, in my case 6x3.
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/84649d65-76e2-45e2-b469-5e0a8fa59fed)
 
 <p>
-Alright, now we just need to place a sprite of the size we want our slot to be in our "Grid" object in the "Image" component.
+Alright, now we just need to place a sprite of the size we want our slot to have in our "Grid" object in the "Image" component, after we add the sprite, let's go under the "Image" component in the "ImageType" option and select the Tilled option.
 
 I'll leave the image I use in my project so you can get an idea of ​​how it works.
-
-Something similar to this:
 </p>
-
-![Inventory-Slot-Grid](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/495428a5-203c-46b2-9c67-16392b47859d)
 
 <p>
 Our grid object will look like this:
 </p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a656a012-e3fd-405b-ab52-ca6743d436b6)
