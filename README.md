@@ -5,6 +5,7 @@
 <li>Introduction</li>
 <li>Starting</li>
 <li>Creating Inventory</li>
+<li>Creating Items</li>
 </ol>
 
 <h3>Introduction</h3>
@@ -118,3 +119,26 @@ Our grid object will look like this:
 </p>
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a656a012-e3fd-405b-ab52-ca6743d436b6)
+
+<h3>Creating Items</h3>
+<p>
+Now let's create some items to test our inventory :)
+
+To create an item we will need to create a folder called "Items" or something similar, after creating it, right click inside it and look for the "Create/InventoryTetris/ItemData" option.
+
+It will look something like this image:
+</p>
+
+![Sem título5](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/e16f2eed-1a5d-473e-ba0f-d4690af52046)
+
+<p>
+The item name is defined by the name of the ScriptableObject. After choosing the name, we will choose how our object will work.
+
+Select a good photo for the item and choose the size it will use from the inventory.
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/c8cb2bdf-93fc-47a1-8432-49d616cdb09d)
+
+<p>
+Let's go to the last step now, creating the prefabricated object.
+</p>
