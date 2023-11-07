@@ -4,6 +4,7 @@
 <ol>
 <li>Introduction</li>
 <li>Starting</li>
+<li>Creating Inventory</li>
 </ol>
 
 <h3>Introduction</h3>
@@ -59,3 +60,22 @@ I changed the color of the image component too, after these changes we should ha
 </p>
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/8a3706ec-84c8-42d4-88a3-17902d003de9)
+
+<h3>Creating Inventory</h3>
+<p>
+Now we get to the best part, adding scripts and building our inventory.
+</p>
+
+<p>
+We will need to add 2 scripts to our Inventory object.
+They are:
+
+<ul>
+<li>Inventory</li>
+<li>InventoryController</li>
+</ul>
+
+Later on I'll talk more about each one, for now let's try to make it work first.
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/03d01a58-4eac-4944-a2b1-f474ae568345)
