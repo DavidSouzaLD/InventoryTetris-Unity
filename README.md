@@ -1,25 +1,22 @@
 <h1>Inventory Tetris</h1>
 
-<h2>Summary</h2>
-
-[1. What is a tetris inventory?](#what-is-a-tetris-inventory?)
-
-[2. Introduction](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#introduction)
-
-[3. Starting](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#starting)
-
-[4.Creating Inventory](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#creating-inventory)
-
-[5.Creating Items](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#creating-items)
-
-[6.Testing The Inventory](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#testing-the-inventory)
-
-<h3>What is a tetris inventory?</h3>
 <p>
 A Tetris-style inventory system for Unity would feature a grid where players organize items with various shapes into an efficient layout. Items must be rotated and strategically placed to optimize space, much like fitting Tetris blocks together
 </p>
 
-<h3>Introduction</h3>
+## Summary
+
+[1. Introduction](#introduction)
+
+[2. Starting](#starting)
+
+[3.Creating Inventory](#creating-inventory)
+
+[4.Creating Items](#creating-items)
+
+[5.Testing The Inventory](#testing-the-inventory)
+
+### Introduction
 <p>
 Hi, welcome to an attempt to document the implementation of the
 inventory system in your project!!
@@ -27,7 +24,7 @@ Feel free to contact me if something goes wrong or if you have any good
 ideas to implement in the project. :)
 </p>
 
-<h3>Starting</h3>
+### Starting
 <p> 
 First open the "Inventory" script, go to the first lines where there is the static class "InventorySettings" and choose the desired options for your inventory.
 <p> 
@@ -90,7 +87,7 @@ IMPORTANT POINT: Use Shift + Alt to change your Stretch to the top left corner.
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/aedce17d-7616-46ed-83c5-5be4de97a891)
 
-<h3>Creating Inventory</h3>
+### Creating Inventory
 <p>
 Now we get to the best part, adding scripts and building our inventory.
 
@@ -139,7 +136,7 @@ Our grid object will look like this:
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a656a012-e3fd-405b-ab52-ca6743d436b6)
 
-<h3>Creating Items</h3>
+### Creating Items
 <p>
 Now let's create some items to test our inventory :)
 
@@ -178,7 +175,7 @@ Now save this item we just created in some folder, I recommend creating a folder
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/1b44ce83-23d1-4734-b77a-dbccfed92c91)
 
-<h3>Testing The Inventory</h3>
+### Testing The Inventory
 <p>
   Now we have almost everything to start using our inventory.
 
