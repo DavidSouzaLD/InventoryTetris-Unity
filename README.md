@@ -20,7 +20,12 @@ ideas to implement in the project. :)
 <p> 
 
 First open the "Inventory" script, go to the first lines where there is the static class "InventorySettings" and choose the desired options for your inventory.
+<p> 
 
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/f85f3490-cd7d-4a33-8094-cba7cd4c8e6d)
+
+
+<p>
 Then we need to create a "Canvas" in Unity.
 
 Click with the right mouse button to open the Unity menu and create a new canvas, follow the image as an example:
@@ -150,6 +155,16 @@ Let's go to the last step now, creating the prefabricated object.
 <li>Create a new empty object inside the canvas and name it "ItemPrefab", go to "RectTransform" and select the width and height of the slot size that you configured in "InventorySettings".</li>
 <li>Then create two more image objects, name one "Icon" and the other "Background".</li>
 <li>Leave the two image-type objects you just created with the maximized stretch the same as we did a while ago.</li>
+<li>Add the "Item" script to the object we just created and place the "Icon" and "Background" components and place the image components we just created in them.</li>
 </ul>
-  
+
 </p>
+
+![Sem título6](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/67ea93b7-f2af-4b02-a92a-c6d140f14bc6)
+
+<p>
+Now save this item we just created in some folder, I recommend creating a folder called "Prefabs" and put it there
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/1b44ce83-23d1-4734-b77a-dbccfed92c91)
+
