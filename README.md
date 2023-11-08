@@ -182,5 +182,19 @@ And we will also add the data of the items we created previously to the "Invento
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a5ec33e7-0d1a-4bee-9627-c10f4012d492)
 
-Now let's test our inventory :))))
-I'm going to create several items of different sizes so we can see how it works.
+<p>
+Now let's test our inventory :)
+
+but
+
+First of all, you can change the buttons in the "InventoryController" script, in addition, all the code is commented and written semantically.
+
+If you have any ideas, don't hesitate to try!!
+Thank you for your patience and follow the video of our inventory working.
+</p>
+
+https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/c4e7d658-c2d9-460d-833e-1079066e97f7
+
+https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/3af77012-27dc-4489-8972-ec2e4bf83acb
+
+https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/87ad7602-934e-433d-b9bf-6ca447e6439a
