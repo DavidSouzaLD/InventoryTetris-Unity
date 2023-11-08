@@ -17,7 +17,7 @@ public class Item : MonoBehaviour
     /// <summary>
     /// Image element responsible for showing the item icon background.
     /// </summary>
-    public Image iconBackground;
+    public Image background;
 
     /// <summary>
     /// Target rotation of the 
@@ -70,7 +70,7 @@ public class Item : MonoBehaviour
     private void Start()
     {
         icon.sprite = data.icon;
-        iconBackground.color = data.backgroundColor;
+        background.color = data.backgroundColor;
     }
 
     /// <summary>

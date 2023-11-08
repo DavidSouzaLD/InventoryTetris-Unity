@@ -22,20 +22,20 @@ public class InventoryController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
             // Check if mouse is inside a any grid.
-            if (!inventory.ReachedBoundary(inventory.GetTileAtMouseCoords(), inventory.gridOnMouse))
+            if (!inventory.ReachedBoundary(inventory.GetSlotAtMouseCoords(), inventory.gridOnMouse))
             {
                 if (inventory.selectedItem)
                 {
-                    Item currentSelectedItem = inventory.selectedItem;
+                    Item oldSelectedItem = inventory.selectedItem;
                     Item overlapItem = inventory.GetItemAtMouseCoords();
 
                     if (overlapItem != null)
                     {
-                        inventory.SwapItem(overlapItem);
+                        inventory.SwapItem(overlapItem, oldSelectedItem);
                     }
                     else
                     {
-                        inventory.MoveItem(currentSelectedItem);
+                        inventory.MoveItem(oldSelectedItem);
                     }
                 }
                 else
@@ -101,11 +101,11 @@ public class InventoryController : MonoBehaviour
     {
         inventory.selectedItem.rectTransform.position = new Vector3(
                 Input.mousePosition.x
-                    + ((inventory.selectedItem.correctedSize.width * InventorySettings.tileSize.x) / 2)
-                    - InventorySettings.tileSize.x / 2,
+                    + ((inventory.selectedItem.correctedSize.width * InventorySettings.slotSize.x) / 2)
+                    - InventorySettings.slotSize.x / 2,
                 Input.mousePosition.y
-                    - ((inventory.selectedItem.correctedSize.height * InventorySettings.tileSize.y) / 2)
-                    + InventorySettings.tileSize.y / 2,
+                    - ((inventory.selectedItem.correctedSize.height * InventorySettings.slotSize.y) / 2)
+                    + InventorySettings.slotSize.y / 2,
                 Input.mousePosition.z
             );
     }

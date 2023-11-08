@@ -49,8 +49,8 @@ public class InventoryGrid : MonoBehaviour, IPointerEnterHandler
         // Set grid size
         Vector2 size =
             new(
-                gridSize.x * InventorySettings.tileSize.x,
-                gridSize.y * InventorySettings.tileSize.y
+                gridSize.x * InventorySettings.slotSize.x,
+                gridSize.y * InventorySettings.slotSize.y
             );
         rectTransform.sizeDelta = size;
     }

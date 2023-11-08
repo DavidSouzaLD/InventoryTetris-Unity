@@ -6,12 +6,12 @@ public static class InventorySettings
     /// <summary>
     /// Size that each slot has.
     /// </summary>
-    public static readonly Vector2Int tileSize = new(96, 96);
+    public static readonly Vector2Int slotSize = new(96, 96);
 
     /// <summary>
-    /// Tile scale for external changes. Do not touch.
+    /// Slot scale for external changes. Do not touch.
     /// </summary>
-    public static readonly float tileScale = 1f;
+    public static readonly float slotScale = 1f;
 
     /// <summary>
     /// Speed ​​at which the item will return to its target.
@@ -87,34 +87,34 @@ public partial class Inventory : MonoBehaviour
             {
                 for (int x = 0; x < grids[g].gridSize.x; x++)
                 {
-                    Vector2Int tilePosition = new Vector2Int(x, y);
+                    Vector2Int slotPosition = new Vector2Int(x, y);
 
                     for (int r = 0; r < 2; r++)
                     {
                         if (r == 0)
                         {
-                            if (!ExistsItem(tilePosition, grids[g], itemData.size.width, itemData.size.height))
+                            if (!ExistsItem(slotPosition, grids[g], itemData.size.width, itemData.size.height))
                             {
                                 Item newItem = Instantiate(itemPrefab);
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();
                                 newItem.rectTransform.SetParent(grids[g].rectTransform);
                                 newItem.rectTransform.sizeDelta = new Vector2(
-                                    itemData.size.width * InventorySettings.tileSize.x,
-                                    itemData.size.height * InventorySettings.tileSize.y
+                                    itemData.size.width * InventorySettings.slotSize.x,
+                                    itemData.size.height * InventorySettings.slotSize.y
                                 );
 
-                                newItem.indexPosition = tilePosition;
+                                newItem.indexPosition = slotPosition;
                                 newItem.inventory = this;
 
                                 for (int xx = 0; xx < itemData.size.width; xx++)
                                 {
                                     for (int yy = 0; yy < itemData.size.height; yy++)
                                     {
-                                        int tileX = tilePosition.x + xx;
-                                        int tileY = tilePosition.y + yy;
+                                        int slotX = slotPosition.x + xx;
+                                        int slotY = slotPosition.y + yy;
 
-                                        grids[g].items[tileX, tileY] = newItem;
-                                        grids[g].items[tileX, tileY].data = itemData;
+                                        grids[g].items[slotX, slotY] = newItem;
+                                        grids[g].items[slotX, slotY].data = itemData;
                                     }
                                 }
 
@@ -126,7 +126,7 @@ public partial class Inventory : MonoBehaviour
 
                         if (r == 1)
                         {
-                            if (!ExistsItem(tilePosition, grids[g], itemData.size.height, itemData.size.width))
+                            if (!ExistsItem(slotPosition, grids[g], itemData.size.height, itemData.size.width))
                             {
                                 Item newItem = Instantiate(itemPrefab);
                                 newItem.Rotate();
@@ -134,22 +134,22 @@ public partial class Inventory : MonoBehaviour
                                 newItem.rectTransform = newItem.GetComponent<RectTransform>();
                                 newItem.rectTransform.SetParent(grids[g].rectTransform);
                                 newItem.rectTransform.sizeDelta = new Vector2(
-                                    itemData.size.width * InventorySettings.tileSize.x,
-                                    itemData.size.height * InventorySettings.tileSize.y
+                                    itemData.size.width * InventorySettings.slotSize.x,
+                                    itemData.size.height * InventorySettings.slotSize.y
                                 );
 
-                                newItem.indexPosition = tilePosition;
+                                newItem.indexPosition = slotPosition;
                                 newItem.inventory = this;
 
                                 for (int xx = 0; xx < itemData.size.height; xx++)
                                 {
                                     for (int yy = 0; yy < itemData.size.width; yy++)
                                     {
-                                        int tileX = tilePosition.x + xx;
-                                        int tileY = tilePosition.y + yy;
+                                        int slotX = slotPosition.x + xx;
+                                        int slotY = slotPosition.y + yy;
 
-                                        grids[g].items[tileX, tileY] = newItem;
-                                        grids[g].items[tileX, tileY].data = itemData;
+                                        grids[g].items[slotX, slotY] = newItem;
+                                        grids[g].items[slotX, slotY].data = itemData;
                                     }
                                 }
 
@@ -183,34 +183,36 @@ public partial class Inventory : MonoBehaviour
     /// <summary>
     /// Moves an item to a new position, first checking if the item is outside the grid or if there is an item in the desired slot.
     /// </summary>
-    /// <param name="tilePosition">Position that will be checked as the new position of the item in the inventory.</param>
+    /// <param name="slotPosition">Position that will be checked as the new position of the item in the inventory.</param>
     /// <param name="item">Item that will be moved to the new position.</param>
     /// <param name="deselectItemInEnd">Boolean that indicates whether the object will be deselected when it finishes moving.</param>
     public void MoveItem(Item item, bool deselectItemInEnd = true)
     {
-        Vector2Int tilePosition = GetTileAtMouseCoords();
+        Vector2Int slotPosition = GetSlotAtMouseCoords();
 
-        if (ReachedBoundary(tilePosition, gridOnMouse, item.correctedSize.width, item.correctedSize.height))
+        if (ReachedBoundary(slotPosition, gridOnMouse, item.correctedSize.width, item.correctedSize.height))
         {
+            Debug.Log("Bounds");
             return;
         }
 
-        if (ExistsItem(tilePosition, gridOnMouse, item.correctedSize.width, item.correctedSize.height))
+        if (ExistsItem(slotPosition, gridOnMouse, item.correctedSize.width, item.correctedSize.height))
         {
+            Debug.Log("Item");
             return;
         }
 
-        item.indexPosition = tilePosition;
+        item.indexPosition = slotPosition;
         item.rectTransform.SetParent(gridOnMouse.rectTransform);
 
         for (int x = 0; x < item.correctedSize.width; x++)
         {
             for (int y = 0; y < item.correctedSize.height; y++)
             {
-                int tileX = item.indexPosition.x + x;
-                int tileY = item.indexPosition.y + y;
+                int slotX = item.indexPosition.x + x;
+                int slotY = item.indexPosition.y + y;
 
-                gridOnMouse.items[tileX, tileY] = item;
+                gridOnMouse.items[slotX, slotY] = item;
             }
         }
 
@@ -227,12 +229,12 @@ public partial class Inventory : MonoBehaviour
     /// Swaps the selected item with the item overlaid by the mouse.
     /// </summary>
     /// <param name="overlapItem">Overlapping item.</param>
-    public void SwapItem(Item overlapItem)
+    public void SwapItem(Item overlapItem, Item oldSelectedItem)
     {
-        if (!ReachedBoundary(overlapItem.indexPosition, gridOnMouse, selectedItem.correctedSize.width, selectedItem.correctedSize.height))
+        if (!ReachedBoundary(overlapItem.indexPosition, gridOnMouse, oldSelectedItem.correctedSize.width, oldSelectedItem.correctedSize.height))
         {
             SelectItem(overlapItem);
-            MoveItem(selectedItem, false);
+            MoveItem(oldSelectedItem, false);
         }
     }
 
@@ -246,10 +248,10 @@ public partial class Inventory : MonoBehaviour
         {
             for (int y = 0; y < item.correctedSize.height; y++)
             {
-                int tileX = item.indexPosition.x + x;
-                int tileY = item.indexPosition.y + y;
+                int slotX = item.indexPosition.x + x;
+                int slotY = item.indexPosition.y + y;
 
-                item.inventoryGrid.items[tileX, tileY] = null;
+                item.inventoryGrid.items[slotX, slotY] = null;
             }
         }
     }
@@ -257,15 +259,16 @@ public partial class Inventory : MonoBehaviour
     /// <summary>
     /// Checks if there is an item in the indicated position.
     /// </summary>
-    /// <param name="tilePosition">Position to be checked.</param>
+    /// <param name="slotPosition">Position to be checked.</param>
     /// <param name="width">Item width</param>
     /// <param name="height">Item height</param>
     /// <param name="grid">Grid in which the verification should occur.</param>
     /// <returns></returns>
-    public bool ExistsItem(Vector2Int tilePosition, InventoryGrid grid, int width = 1, int height = 1)
+    public bool ExistsItem(Vector2Int slotPosition, InventoryGrid grid, int width = 1, int height = 1)
     {
-        if (ReachedBoundary(tilePosition, grid, width, height))
+        if (ReachedBoundary(slotPosition, grid, width, height))
         {
+            Debug.Log("Bounds2");
             return true;
         }
 
@@ -273,10 +276,10 @@ public partial class Inventory : MonoBehaviour
         {
             for (int y = 0; y < height; y++)
             {
-                int tileX = tilePosition.x + x;
-                int tileY = tilePosition.y + y;
+                int slotX = slotPosition.x + x;
+                int slotY = slotPosition.y + y;
 
-                if (grid.items[tileX, tileY] != null)
+                if (grid.items[slotX, slotY] != null)
                 {
                     return true;
                 }
@@ -289,19 +292,19 @@ public partial class Inventory : MonoBehaviour
     /// <summary>
     /// Checks whether the indicated position is outside the inventory limit.
     /// </summary>
-    /// <param name="tilePosition">Position to be checked.</param>
+    /// <param name="slotPosition">Position to be checked.</param>
     /// <param name="width">Item width.</param>
     /// <param name="height">Item height.</param>
     /// <param name="gridReference">Grid in which the verification should occur.</param>
     /// <returns></returns>
-    public bool ReachedBoundary(Vector2Int tilePosition, InventoryGrid gridReference, int width = 1, int height = 1)
+    public bool ReachedBoundary(Vector2Int slotPosition, InventoryGrid gridReference, int width = 1, int height = 1)
     {
-        if (tilePosition.x + width > gridReference.gridSize.x || tilePosition.x < 0)
+        if (slotPosition.x + width > gridReference.gridSize.x || slotPosition.x < 0)
         {
             return true;
         }
 
-        if (tilePosition.y + height > gridReference.gridSize.y || tilePosition.y < 0)
+        if (slotPosition.y + height > gridReference.gridSize.y || slotPosition.y < 0)
         {
             return true;
         }
@@ -319,10 +322,10 @@ public partial class Inventory : MonoBehaviour
         Vector3 inventorizedPosition =
             new()
             {
-                x = item.indexPosition.x * InventorySettings.tileSize.x
-                    + InventorySettings.tileSize.x * item.correctedSize.width / 2,
-                y = -(item.indexPosition.y * InventorySettings.tileSize.y
-                    + InventorySettings.tileSize.y * item.correctedSize.height / 2
+                x = item.indexPosition.x * InventorySettings.slotSize.x
+                    + InventorySettings.slotSize.x * item.correctedSize.width / 2,
+                y = -(item.indexPosition.y * InventorySettings.slotSize.y
+                    + InventorySettings.slotSize.y * item.correctedSize.height / 2
                 )
             };
 
@@ -333,7 +336,7 @@ public partial class Inventory : MonoBehaviour
     /// Returns the screen of the matrix the mouse is on top of.
     /// </summary>
     /// <returns></returns>
-    public Vector2Int GetTileAtMouseCoords()
+    public Vector2Int GetSlotAtMouseCoords()
     {
         if (gridOnMouse == null)
         {
@@ -346,13 +349,13 @@ public partial class Inventory : MonoBehaviour
                 gridOnMouse.rectTransform.position.y - Input.mousePosition.y
             );
 
-        Vector2Int tilePosition =
+        Vector2Int slotPosition =
             new(
-                (int)(gridPosition.x / (InventorySettings.tileSize.x * InventorySettings.tileScale)),
-                (int)(gridPosition.y / (InventorySettings.tileSize.y * InventorySettings.tileScale))
+                (int)(gridPosition.x / (InventorySettings.slotSize.x * InventorySettings.slotScale)),
+                (int)(gridPosition.y / (InventorySettings.slotSize.y * InventorySettings.slotScale))
             );
 
-        return tilePosition;
+        return slotPosition;
     }
 
 
@@ -362,23 +365,23 @@ public partial class Inventory : MonoBehaviour
     /// <returns></returns>
     public Item GetItemAtMouseCoords()
     {
-        Vector2Int tilePosition = GetTileAtMouseCoords();
+        Vector2Int slotPosition = GetSlotAtMouseCoords();
 
-        if (!ReachedBoundary(tilePosition, gridOnMouse))
+        if (!ReachedBoundary(slotPosition, gridOnMouse))
         {
-            return GetItemFromTilePosition(tilePosition);
+            return GetItemFromSlotPosition(slotPosition);
         }
 
         return null;
     }
 
     /// <summary>
-    /// Returns an item based on the tile position.
+    /// Returns an item based on the slot position.
     /// </summary>
-    /// <param name="tilePosition">Tile position to check.</param>
+    /// <param name="slotPosition">Slot position to check.</param>
     /// <returns></returns>
-    public Item GetItemFromTilePosition(Vector2Int tilePosition)
+    public Item GetItemFromSlotPosition(Vector2Int slotPosition)
     {
-        return gridOnMouse.items[tilePosition.x, tilePosition.y];
+        return gridOnMouse.items[slotPosition.x, slotPosition.y];
     }
 }
