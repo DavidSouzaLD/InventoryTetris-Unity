@@ -18,7 +18,11 @@ ideas to implement in the project. :)
 
 <h3>Starting</h3>
 <p> 
-First, we will need to create a "Canvas" in Unity.
+
+First open the "Inventory" script, go to the first lines where there is the static class "InventorySettings" and choose the desired options for your inventory.
+
+Then we need to create a "Canvas" in Unity.
+
 Click with the right mouse button to open the Unity menu and create a new canvas, follow the image as an example:
 </p>
 
@@ -141,4 +145,11 @@ Select a good photo for the item and choose the size it will use from the invent
 
 <p>
 Let's go to the last step now, creating the prefabricated object.
+
+<ul>
+<li>Create a new empty object inside the canvas and name it "ItemPrefab", go to "RectTransform" and select the width and height of the slot size that you configured in "InventorySettings".</li>
+<li>Then create two more image objects, name one "Icon" and the other "Background".</li>
+<li>Leave the two image-type objects you just created with the maximized stretch the same as we did a while ago.</li>
+</ul>
+  
 </p>
