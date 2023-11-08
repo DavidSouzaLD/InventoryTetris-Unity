@@ -2,12 +2,18 @@
 
 <h2>Summary</h2>
 <ol>
+<li>What is a tetris inventory?</li>
 <li>Introduction</li>
 <li>Starting</li>
 <li>Creating Inventory</li>
 <li>Creating Items</li>
 <li>Testing The Inventory</li>
 </ol>
+
+<h3>What is a tetris inventory?</h3>
+<p>
+A Tetris-style inventory system for Unity would feature a grid where players organize items with various shapes into an efficient layout. Items must be rotated and strategically placed to optimize space, much like fitting Tetris blocks together
+</p>
 
 <h3>Introduction</h3>
 <p>
@@ -19,7 +25,6 @@ ideas to implement in the project. :)
 
 <h3>Starting</h3>
 <p> 
-
 First open the "Inventory" script, go to the first lines where there is the static class "InventorySettings" and choose the desired options for your inventory.
 <p> 
 
