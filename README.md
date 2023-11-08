@@ -1,7 +1,7 @@
 <h1>Inventory Tetris</h1>
 
 <p>
-A Tetris-style inventory system for Unity would feature a grid where players organize items with various shapes into an efficient layout. Items must be rotated and strategically placed to optimize space, much like fitting Tetris blocks together
+A Tetris-style inventory system for Unity would feature a grid where players organize items with various shapes into an efficient layout. Items must be rotated and strategically placed to optimize space.
 </p>
 
 ## Summary
