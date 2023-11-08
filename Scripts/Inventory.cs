@@ -19,7 +19,7 @@ public static class InventorySettings
     public static readonly float rotationAnimationSpeed = 30f;
 }
 
-public partial class Inventory : MonoBehaviour
+public class Inventory : MonoBehaviour
 {
     /// <summary>
     /// List of data for each item in the game.
@@ -231,11 +231,21 @@ public partial class Inventory : MonoBehaviour
     /// <param name="overlapItem">Overlapping item.</param>
     public void SwapItem(Item overlapItem, Item oldSelectedItem)
     {
-        if (!ReachedBoundary(overlapItem.indexPosition, gridOnMouse, oldSelectedItem.correctedSize.width, oldSelectedItem.correctedSize.height))
+        if (ReachedBoundary(overlapItem.indexPosition, gridOnMouse, oldSelectedItem.correctedSize.width, oldSelectedItem.correctedSize.height))
         {
-            SelectItem(overlapItem);
-            MoveItem(oldSelectedItem, false);
+            return;
         }
+
+        ClearItemReferences(overlapItem);
+
+        if (ExistsItem(overlapItem.indexPosition, gridOnMouse, oldSelectedItem.correctedSize.width, oldSelectedItem.correctedSize.height))
+        {
+            RevertItemReferences(overlapItem);
+            return;
+        }
+
+        SelectItem(overlapItem);
+        MoveItem(oldSelectedItem, false);
     }
 
     /// <summary>
@@ -252,6 +262,24 @@ public partial class Inventory : MonoBehaviour
                 int slotY = item.indexPosition.y + y;
 
                 item.inventoryGrid.items[slotX, slotY] = null;
+            }
+        }
+    }
+
+    /// <summary>
+    /// Clears the item position references in the inventory.
+    /// </summary>
+    /// <param name="item">Item to have references removed.</param>
+    public void RevertItemReferences(Item item)
+    {
+        for (int x = 0; x < item.correctedSize.width; x++)
+        {
+            for (int y = 0; y < item.correctedSize.height; y++)
+            {
+                int slotX = item.indexPosition.x + x;
+                int slotY = item.indexPosition.y + y;
+
+                item.inventoryGrid.items[slotX, slotY] = item;
             }
         }
     }
