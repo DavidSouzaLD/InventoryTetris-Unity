@@ -10,11 +10,11 @@ A Tetris-style inventory system for Unity would feature a grid where players org
 
 [2. Starting](#starting)
 
-[3.Creating Inventory](#creating-inventory)
+[3. Creating Inventory](#creating-inventory)
 
-[4.Creating Items](#creating-items)
+[4. Creating Items](#creating-items)
 
-[5.Testing The Inventory](#testing-the-inventory)
+[5. Testing The Inventory](#testing-the-inventory)
 
 ### Introduction
 <p>
