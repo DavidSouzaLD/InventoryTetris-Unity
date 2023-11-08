@@ -73,13 +73,11 @@ I changed the color of the image component too, after these changes we should ha
 <p>
 Let's create another object called "Grid", this object will be a child of the "Backpack [6x3]" object and every backpack object needs a grid object.
 
-In the grid object, I will also add an image element and I will also use Shift + Alt to change its Stretch to maximized.
+In the grid object, I will also add an image element and IMPORTANT POINT:
+Use Shift + Alt to change your Stretch to the top left corner.
 </p>
 
-![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/c9ddce6f-d261-45a0-8d6b-19889003f063)
-
-<p>
-</p>
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/aedce17d-7616-46ed-83c5-5be4de97a891)
 
 <h3>Creating Inventory</h3>
 <p>
@@ -185,3 +183,4 @@ And we will also add the data of the items we created previously to the "Invento
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a5ec33e7-0d1a-4bee-9627-c10f4012d492)
 
 Now let's test our inventory :))))
+I'm going to create several items of different sizes so we can see how it works.
