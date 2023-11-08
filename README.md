@@ -2,7 +2,7 @@
 
 <h2>Summary</h2>
 
-[1. What is a tetris inventory?](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#what-is-a-tetris-inventory)
+[1. What is a tetris inventory?](#what-is-a-tetris-inventory?)
 
 [2. Introduction](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#introduction)
 
@@ -82,8 +82,10 @@ I changed the color of the image component too, after these changes we should ha
 <p>
 Let's create another object called "Grid", this object will be a child of the "Backpack [6x3]" object and every backpack object needs a grid object.
 
-In the grid object, I will also add an image element and IMPORTANT POINT:
-Use Shift + Alt to change your Stretch to the top left corner.
+In the grid object, I will also add an image element.
+
+> [!IMPORTANT]
+IMPORTANT POINT: Use Shift + Alt to change your Stretch to the top left corner.
 </p>
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/aedce17d-7616-46ed-83c5-5be4de97a891)
