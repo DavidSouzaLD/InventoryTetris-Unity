@@ -6,6 +6,7 @@
 <li>Starting</li>
 <li>Creating Inventory</li>
 <li>Creating Items</li>
+<li>Testing The Inventory</li>
 </ol>
 
 <h3>Introduction</h3>
@@ -168,3 +169,19 @@ Now save this item we just created in some folder, I recommend creating a folder
 
 ![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/1b44ce83-23d1-4734-b77a-dbccfed92c91)
 
+<h3>Testing The Inventory</h3>
+<p>
+  Now we have almost everything to start using our inventory.
+
+  Let's drag our "ItemPrefab" to the "Inventory" script and place it in the corresponding variable.
+</p>
+
+![Sem título7](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/f520dbef-3243-474f-9d5f-1d63812ea5bc)
+
+<p>
+And we will also add the data of the items we created previously to the "Inventory" script, like this:
+</p>
+
+![image](https://github.com/DavidSouzaLD/InventoryTetris-Unity/assets/100738882/a5ec33e7-0d1a-4bee-9627-c10f4012d492)
+
+Now let's test our inventory :))))
