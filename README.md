@@ -1,14 +1,18 @@
 <h1>Inventory Tetris</h1>
 
 <h2>Summary</h2>
-<ol>
-<li>What is a tetris inventory?</li>
-<li>Introduction</li>
-<li>Starting</li>
-<li>Creating Inventory</li>
-<li>Creating Items</li>
-<li>Testing The Inventory</li>
-</ol>
+
+[1. What is a tetris inventory?](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#what-is-a-tetris-inventory)
+
+[2. Introduction](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#introduction)
+
+[3. Starting](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#starting)
+
+[4.Creating Inventory](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#creating-inventory)
+
+[5.Creating Items](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#creating-items)
+
+[6.Testing The Inventory](https://github.com/DavidSouzaLD/InventoryTetris-Unity/edit/main/README.md#testing-the-inventory)
 
 <h3>What is a tetris inventory?</h3>
 <p>
